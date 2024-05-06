@@ -1,0 +1,479 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* CSS variables */
+:root {
+  --white-color: #fff;
+  --dark-color: #222;
+  --body-bg-color: #fff;
+  --second-color: #0E1E40;
+  --first-color: #008386;
+  --section-bg-color: #202834;
+  --navigation-item-hover-color: #3b5378;
+  --text-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  --scroll-bar-color: #fff;
+  --scroll-thumb-color: #282f4e;
+  --scroll-thumb-hover-color: #454f6b;
+}
+
+* {
+    margin: 0; /* Resets all margins */
+    padding: 0; /* Resets all padding */
+    box-sizing: border-box; /* Ensures that padding and border are included in the element's total width and height */
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px; /* Sets margin for the entire body */
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.row{
+  width: 80%;
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
+  overflow-x: hidden;
+  padding: 5rem 0;
+}
+
+.row .imgWrapper{
+  overflow: hidden;
+}
+
+.row .imgWrapper img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.row .imgWrapper:hover img{
+  transform: scale(1.25);
+}
+
+.row .contentWrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.row .contentWrapper span.textWrapper{
+  display: block;
+  font-size: 20px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.row .contentWrapper span.textWrapper span{
+  display: inline-block;
+  background: #383f47;
+  width: 70px;
+  height: 5px;
+}
+
+.row .contentWrapper h2{
+  font-size: 40px;
+  font-weight: 700;
+  color: #383f47;
+  padding-bottom: 20px;
+}
+
+.row .contentWrapper p{
+  font-size: 16px;
+  line-height: 25px;
+  padding-bottom: 25px;
+}
+
+.row .contentWrapper a{
+  display: inline-block;
+  text-decoration: none;
+  text-transform; uppercase;
+  background: #383f47;
+  color: #fff;
+  padding: 15px 40px;
+  letter-spacing: 1px;
+  user-select: none;
+}
+/*==Scroll bar==*/
+::-webkit-scrollbar{
+  width: 11px;
+  background: var(--scroll-bar-color);
+}
+
+::-webkit-scrollbar-thumb{
+  width: 100%;
+  background: var(--scroll-thumb-color);
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: var(--scroll-thumb-color);
+}
+
+/* Main CSS */
+header {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-boxt;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+body {
+  background: var(--white-color);
+}
+
+section{
+  position: relative;
+}
+
+.section{
+  color: var(--dark-color);
+  background: var(--white-color);
+  padding: 35px 200px;
+  transition: 0.3s ease;
+}
+
+/* Header */
+header {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: calc(5rem + 1rem);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  transition: 0.5s ease;
+  transition-property: height, background;
+}
+
+header.sticky{
+  height: calc(2.5rem + 1rem);
+  background: rgba(255, 255, 255, 0.1);
+  background-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--dark-color)
+}
+
+header .nav-bar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  transition: 0.3s ease;
+}
+
+.nav-close-btn,
+.nav-menu-btn {
+  display: none;
+}
+
+.nav-bar .logo {
+  color: var(--white-color);
+  font-size: 1.8em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: var(--text-shadow);
+}
+
+.navigation .nav-items a {
+  color: var(--white-color);
+  font-size: 1em;
+  text-decoration: none;
+  text-shadow: var(--text-shadow);
+}
+
+.nav-items i{
+  display: none;
+}
+
+.navigation .nav-items a:not(:last-child) {
+  margin-right: 45px;
+}
+
+/*==home==*/
+.home{
+  min-height: 100vh;
+}
+/*wedo*/
+.wedo-section .text{
+  background-color: #3498db;
+  padding: 30px 0; /* Adjust the padding to increase the color area */
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.wedo-section {
+  text-align: center; /* Center align the content horizontally */
+}
+
+
+.wedo-section .class-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  background-color: #3498db; /* Set the background color */
+  padding: 0px 0; /* Add padding for spacing */
+}
+
+.wedo-section .card {
+  width: 325px;
+  margin-top: 0px; /* Adjust spacing between cards */
+  border-radius: 0px;
+  overflow: hidden;
+  transition: transform 0.6s ease;
+  text-align: center; /* Center text horizontally */
+}
+
+
+.wedo-section .card img {
+  width: 300px; /* Adjust the size as needed */
+  height: 300px; /* Adjust the size as needed */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.card-button {
+  font-size: 15px;
+  display: inline-block;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+}
+
+/*projects*/
+.projects-section{
+  margin-top: 100px;
+  background: linear-gradient(180deg, #0E1E40 50%, #f4f4f4 50%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+  padding: 1px;
+}
+
+.projects-section h4{
+  position:;
+  color: #f4f4f4;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.projects-section h2{
+  position:;
+  color: #f4f4f4;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 50px;
+  width: 1150px;
+  margin-bottom: 5%;
+  margin-left: 13%;
+  margin-right: auto;
+  text-align: center; /* Center align the text horizontally */
+}
+
+.projects-section span {
+  font-size: 50px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: #f4f4f4;
+}
+
+.projects-section .class-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  margin-top: 0px;
+  margin-bottom: 100px;
+}
+
+.projects-section .card {
+  width: 325px;
+  background-color: #f4f4f4;
+  border-radius: 0px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transform: translateY(0); /* Set the initial state of the transform property */
+  transition: transform 0.6s ease; /* Apply transition to the transform property */
+}
+
+.projects-section .card:hover {
+  transform: translateY(-20px); /* Apply transform on hover */
+}
+
+.projects-section .card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.projects-section .card-content {
+  padding: 20px;
+  text-align: center; /* Center align the text horizontally */
+}
+
+.projects-section .card-content h2{
+  font-size: 24px;
+  margin-bottom: 10px;
+  border-bottom: 100px solid black; /* Adjust the thickness and color of the underline */
+  padding-bottom: 100px;
+}
+
+
+.projects-section .card-content p {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.projects-section .card-button {
+  display: inline-block;
+  background-color: #0E1E40;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+}
+
+/*bedo*/
+.bedo-section{
+  margin-top: 200px;
+  margin-bottom: 70px;
+  background-image: url("image1.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 200px;
+}
+
+.bedo-section .container {
+  position: relative;
+  width: 300px;
+}
+
+.bedo-section .text {
+  position: absolute;
+  top: 50%; /* Align the text vertically at 50% from the top */
+  left: 9%; /* Adjust the left position as needed */
+  transform: translateY(-50%); /* Center the text vertically */
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 1); /* Optional: Add background color for better readability */
+  padding: 20px; /* Optional: Add padding for better readability */
+  width: relative; /* Set the width of the text column */
+  height: 100%;
+  text-align: center;
+}
+
+.bedo-section a{
+  font-weight: 300;
+  font-size: 50px;
+  position: absolute;
+  top: -25%; /* Align the text vertically at 50% from the top */
+  left: 42%; /* Adjust the left position as needed */
+}
+
+.bedo-section .text h2{
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.bedo-section .text p{
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+@media(max-width: 991px){
+  .row{
+    grid-template-columns: 1fr;
+    grid-gap: 50px;
+  }
+
+  .row .content-Wrapper{
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .row{
+    width: 90%;
+  }
+
+  .row .contentWrapper h2{
+    font-size: 30px;
+    padding-bottom: 20px;
+  }
+
+  .row .contentWrapper p{
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 575px) {
+  .row .contentWrapper span.textWrapper{
+    font-size: 18px;
+  }
+
+  .row .contentWrapper h2{
+    font-size: 25px;
+  }
+
+  .row .contentWrapper p{
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .row .contentWrapper a{
+    font-size: 15px;
+    padding: 10px 40px;
+  }
+}
